@@ -78,8 +78,8 @@
             <select id="timezone" name="timezone">
                 <script>
                     var timezones = ["-12:00", "-11:00", "-10:00", "-09:30", "-09:00", "-08:00", "-07:00", "-06:00", "-05:00", "-04:00", "-03:30", "-03:00", "-02:00", "-01:00", "00:00", "+01:00", "+02:00", "+03:00", "+03:30", "+04:00", "+04:30", "+05:00", "+05:30", "+05:45", "+06:00", "+06:30", "+07:00", "+08:00", "+08:45", "+09:00", "+09:30", "+10:00", "+10:30", "+11:00", "+12:00", "+12:45", "+13:00", "+14:00"];
-                    var localTimezoneOffset = -new Date().getTimezoneOffset() / 60;
-                    var localTimezone = (localTimezoneOffset >= 0 ? '+' : '-') + Math.abs(localTimezoneOffset).toString().padStart(2, '0') + ':00';
+                    var localTimezoneOffset = -new Date().getTimezoneOffset();
+                    var localTimezone = (localTimezoneOffset >= 0 ? '+' : '-') + Math.floor(Math.abs(localTimezoneOffset) / 60).toString().padStart(2, '0') + ':' + (Math.abs(localTimezoneOffset) % 60).toString().padStart(2, '0');
                     for (var i = 0; i < timezones.length; i++) {
                         document.write('<option value="' + timezones[i] + '"' + (timezones[i] === localTimezone ? ' selected' : '') + '>' + timezones[i] + '</option>');
                     }
