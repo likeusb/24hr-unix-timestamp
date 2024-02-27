@@ -1,3 +1,5 @@
+// I have no idea what any of this code does, I don't do javascript, I got Github Copilot to build all of it
+
 function updateExamples() {
     var year = parseInt(document.getElementById('year').value);
     var month = parseInt(document.getElementById('month').value);
@@ -17,7 +19,6 @@ function updateExamples() {
     styleDropdown.options[5].text = `Long Date/Time (${date.toLocaleString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false })})`;
     styleDropdown.options[6].text = `Relative Time (${relativeTime(date)})`;
 
-    // Display Unix timestamp in selected format
     var unixTimestamp = Math.floor(date.getTime() / 1000);
     var unixDate = new Date(unixTimestamp * 1000);
     var formattedUnixTimestamp;
@@ -99,8 +100,6 @@ document.getElementById('hours').addEventListener('change', updateExamples);
 document.getElementById('minutes').addEventListener('change', updateExamples);
 document.getElementById('timezone').addEventListener('change', updateExamples);
 
-// Rest of the JavaScript code
-
 function updateDayDropdown() {
     var year = parseInt(document.getElementById('year').value);
     var month = parseInt(document.getElementById('month').value);
@@ -142,11 +141,10 @@ document.getElementById('dateForm').addEventListener('submit', function(event) {
     document.getElementById('result').textContent = discordTimestamp;
 });
 
-// JavaScript
 document.getElementById('copyButton').addEventListener('click', function() {
     var resultText = document.getElementById('result').textContent;
     var copyButton = document.getElementById('copyButton');
-    var hint = document.getElementById('hint'); // Make sure you have an element with id 'hint' in your HTML
+    var hint = document.getElementById('hint');
 
     if (resultText) {
         navigator.clipboard.writeText(resultText).then(function() {
@@ -154,16 +152,16 @@ document.getElementById('copyButton').addEventListener('click', function() {
             copyButton.style.backgroundColor = "var(--bg-success)";
             hint.textContent = "Copying to clipboard was successful!";
             setTimeout(function() {
-                copyButton.classList.add('transition'); // Add transition class
-                copyButton.style.backgroundColor = "var(--bg-primary)"; // Change back to default color after 1 second
+                copyButton.classList.add('transition');
+                copyButton.style.backgroundColor = "var(--bg-primary)";
             }, 1000);
         }, function(err) {
             console.error('Could not copy text: ', err);
             copyButton.style.backgroundColor = "var(--bg-failure)";
             hint.textContent = "Failed to copy. Check console for details.";
             setTimeout(function() {
-                copyButton.classList.add('transition'); // Add transition class
-                copyButton.style.backgroundColor = "var(--bg-primary)"; // Change back to default color after 1 second
+                copyButton.classList.add('transition');
+                copyButton.style.backgroundColor = "var(--bg-primary)";
             }, 1000);
         });
     } else {
@@ -172,7 +170,6 @@ document.getElementById('copyButton').addEventListener('click', function() {
     }
 });
 
-// Listen for the transition end event to remove the transition class
 document.getElementById('copyButton').addEventListener('transitionend', function() {
     this.classList.remove('transition');
 });

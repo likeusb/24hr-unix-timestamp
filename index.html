@@ -10,8 +10,8 @@
     <h1>The 24hr Compatible Unix Timestamp Converter</h1>
     <form id="dateForm">
         <div class="select-group">
-            <label for="year">shit</label>
-            <select id="year" name="year" data-section="Shit">
+            <label for="year">Year</label>
+            <select id="year" name="year">
                 <script>
                     var currentYear = new Date().getFullYear();
                     for (var i = 2037; i >= 1970; i--) {
@@ -21,7 +21,7 @@
             </select>
         </div>
         <div class="select-group">
-            <label for="month">shit</label>
+            <label for="month">Month</label>
             <select id="month" name="month">
                 <script>
                     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -32,7 +32,7 @@
             </select>
         </div>
         <div class="select-group">
-            <label for="day">shit</label>
+            <label for="day">Day</label>
             <select id="day" name="day">
                 <script>
                     for (var i = 1; i <= 31; i++) {
@@ -42,7 +42,7 @@
             </select>
         </div>
         <div class="select-group">
-            <label for="hours">shit</label>
+            <label for="hours">Hour</label>
             <select id="hours" name="hours">
                 <script>
                     for (var i = 0; i < 24; i++) {
@@ -52,7 +52,7 @@
             </select>
         </div>
         <div class="select-group">
-            <label for="minutes">shit</label>
+            <label for="minutes">Minutes</label>
             <select id="minutes" name="minutes">
                 <script>
                     for (var i = 0; i < 60; i++) {
@@ -62,7 +62,7 @@
             </select>
         </div>
         <div class="select-group">
-            <label for="style">shit</label>
+            <label for="style">Styling of the timestamp</label>
             <select id="style" name="style">
                 <option value="t">Short Time (16:20)</option>
                 <option value="T">Long Time (16:20:30)</option>
@@ -74,10 +74,10 @@
             </select>
         </div>
         <div class="select-group">
-            <label for="timezone">shit</label>
+            <label for="timezone">Timezone used</label>
             <select id="timezone" name="timezone">
                 <script>
-                    var timezones = ["-12:00", "-11:00", "-10:00", "-09:00", "-08:00", "-07:00", "-06:00", "-05:00", "-04:00", "-03:00", "-02:00", "-01:00", "00:00", "+01:00", "+02:00", "+03:00", "+04:00", "+05:00", "+06:00", "+07:00", "+08:00", "+09:00", "+10:00", "+11:00", "+12:00"];
+                    var timezones = ["-12:00", "-11:00", "-10:00", "-09:30", "-09:00", "-08:00", "-07:00", "-06:00", "-05:00", "-04:00", "-03:30", "-03:00", "-02:00", "-01:00", "00:00", "+01:00", "+02:00", "+03:00", "+03:30", "+04:00", "+04:30", "+05:00", "+05:30", "+05:45", "+06:00", "+06:30", "+07:00", "+08:00", "+08:45", "+09:00", "+09:30", "+10:00", "+10:30", "+11:00", "+12:00", "+12:45", "+13:00", "+14:00"];
                     var localTimezoneOffset = -new Date().getTimezoneOffset() / 60;
                     var localTimezone = (localTimezoneOffset >= 0 ? '+' : '-') + Math.abs(localTimezoneOffset).toString().padStart(2, '0') + ':00';
                     for (var i = 0; i < timezones.length; i++) {

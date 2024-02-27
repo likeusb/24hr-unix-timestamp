@@ -26,20 +26,18 @@
     font-size: 10px;
 }
 
+/* Title */
 h1 {
     color: var(--font-primary);
     font-size: 5rem;
     text-align: center;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     background-color: var(--bg-primary);
 }
 
+/* Styling for all the selections, the button, and the input */
 select,
 button,
 input {
@@ -56,8 +54,6 @@ input {
     font-size: 2rem;
 }
 
-
-
 label,
 p {
     color: var(--font-primary);
@@ -73,15 +69,22 @@ form {
     justify-content: space-between;
 }
 
+/* Used as a container for the label and the selection itself */
 .select-group {
     margin: 5px;
 }
 
+/* Puts the label above the selection toggle */
 label {
     display: block;
     margin-bottom: 5px;
 }
 
+/* Used for applying the colour change to the button, colours used:
+    --bg-primary: rgb(41, 41, 41);
+    --bg-success: rgb(0, 163, 0);
+    --bg-failure: rgb(255, 0, 0);
+*/
 button.transition {
     transition: background-color 2s;
 }
